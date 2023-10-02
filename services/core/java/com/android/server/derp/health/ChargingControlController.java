@@ -142,8 +142,7 @@ public class ChargingControlController extends LineageHealthFeature {
 
         mContentResolver = mContext.getContentResolver();
         mChargingControl = IChargingControl.Stub.asInterface(
-                ServiceManager.waitForDeclaredService(
-                        IChargingControl.DESCRIPTOR + "/default"));
+                ServiceManager.getService(IChargingControl.DESCRIPTOR + "/default"));
 
         if (mChargingControl == null) {
             Log.i(TAG, "Lineage Health HAL not found");
