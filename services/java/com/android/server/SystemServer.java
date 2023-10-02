@@ -221,7 +221,6 @@ import com.android.server.wm.WindowManagerGlobalLock;
 import com.android.server.wm.WindowManagerService;
 import com.android.server.derp.LineageGlobalActionsService;
 import com.android.server.derp.display.LiveDisplayService;
-import com.android.server.derp.health.HealthInterfaceService;
 import com.android.server.derp.ParallelSpaceManagerService;
 
 import dalvik.system.VMRuntime;
@@ -2581,9 +2580,6 @@ public final class SystemServer implements Dumpable {
                 t.traceEnd();
                 t.traceBegin("StartLiveDisplayService");
                 mSystemServiceManager.startService(LiveDisplayService.class);
-                t.traceEnd();
-                t.traceBegin("StartHealthService");
-                mSystemServiceManager.startService(HealthInterfaceService.class);
                 t.traceEnd();
             }
         }
