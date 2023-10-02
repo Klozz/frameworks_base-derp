@@ -641,8 +641,8 @@ public class ChargingControlController extends LineageHealthFeature {
                 Settings.System.CHARGING_CONTROL_TARGET_TIME,
                 mDefaultTargetTime);
 
-        // Reset internal states
-        resetInternalState();
+        // Cancel notification, so that it can be updated later
+        mChargingNotification.cancel();
 
         // Update based on those values
         updateChargeControl();
